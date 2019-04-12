@@ -150,7 +150,6 @@ class Correios:
         contract_number = str(contract_number)
         posting_card_number = str(posting_card_number)
         user_data = self._auth_call("buscaCliente", contract_number, posting_card_number)
-        print(user_data.__dict__)
         return self.model_builder.build_user(user_data)
 
     def find_zipcode(self, zip_code: Union[ZipCode, str]) -> ZipAddress:
