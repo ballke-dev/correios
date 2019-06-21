@@ -320,7 +320,7 @@
       <xs:element minOccurs="0" name="complemento" type="xs:string"/>
       <xs:element minOccurs="0" name="complemento2" type="xs:string"/>
       <xs:element minOccurs="0" name="end" type="xs:string"/>
-      <xs:element name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
       <xs:element minOccurs="0" name="uf" type="xs:string"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="unidadesPostagem" nillable="true" type="tns:unidadePostagemERP"/>
     </xs:sequence>
