@@ -349,7 +349,7 @@ class PostingReportPDFRenderer:
                 self.yes if ExtraService.get(EXTRA_SERVICE_AR) in shipping_label else self.no,
                 self.yes if ExtraService.get(EXTRA_SERVICE_MP) in shipping_label else self.no,
                 self.yes if shipping_label.has_declared_value() else self.no,
-                str(shipping_label.value).replace(".", ",") if shipping_label.value is not None else "",
+                str(shipping_label.value).replace(".", ",") if shipping_label.value is not None and shipping_label.has_declared_value() else "",
                 str(shipping_label.invoice_number),
                 shipping_label.get_package_sequence(),
                 shipping_label.receiver.name[:self.max_receiver_name_size],

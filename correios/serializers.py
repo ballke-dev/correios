@@ -96,7 +96,7 @@ class PostingListSerializer:
         for extra_service in shipping_label.extra_services:
             xml_utils.SubElement(extra_services, "codigo_servico_adicional",
                                  text="{!s:>03}".format(extra_service.number))
-        xml_utils.SubElement(extra_services, "valor_declarado", text=str(shipping_label.value).replace(".", ","))
+        xml_utils.SubElement(extra_services, "valor_declarado", text=str(shipping_label.value).replace(".", ",") if shipping_label.value is not None and shipping_label.has_declared_value() else "")
 
         dimensions = xml_utils.SubElement(item, "dimensao_objeto")
         xml_utils.SubElement(dimensions, "tipo_objeto", text="{!s:>03}".format(shipping_label.package.package_type))
